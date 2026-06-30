@@ -36,9 +36,13 @@ CENTER_COLUMNS = {
     'director':             'Director / Primary Contact Name',
     'contact':              'Contact Email',
     'year_established':     'Year Established',
-    'topics_current':       'Current Research Topics',
-    'topics_anticipated':   'Anticipated Research Topics',
-    'topics_would_like':    'Topics You Would Like to Work On',
+    # Checkbox groups all have the same label; deduplicated as _2, _3
+    'topics_current':            'Select all that apply',
+    'topics_current_text':       'Additional current topics not listed above',
+    'topics_anticipated':        'Select all that apply_2',
+    'topics_anticipated_text':   'Additional anticipated topics not listed above',
+    'topics_would_like':         'Select all that apply_3',
+    'topics_would_like_text':    'Additional "would like" topics not listed above',
     'focus_areas':          'Thematic Focus Areas (general profile)',
     'current_projects':     'Current Research Projects',
     'funding_sources':      'Funding Sources',
@@ -57,9 +61,13 @@ INDIVIDUAL_COLUMNS = {
     'country':             'Country',
     'email':               'Email',
     'website':             'Personal / Academic Website',
-    'topics_current':      'Current Research Topics',
-    'topics_anticipated':  'Anticipated Research Topics',
-    'topics_would_like':   'Topics You Would Like to Work On',
+    # Checkbox groups all have the same label; deduplicated as _2, _3
+    'topics_current':      'Select all that apply',
+    'topics_current_text': 'Additional current topics not listed above',
+    'topics_anticipated':  'Select all that apply_2',
+    'topics_anticipated_text': 'Additional anticipated topics not listed above',
+    'topics_would_like':   'Select all that apply_3',
+    'topics_would_like_text':  'Additional "would like" topics not listed above',
     'teaching_regions':    'Teaching – Regional Focus',
     'teaching_levels':     'Teaching – Level',
     'connected_networks':  'Connected External Networks & Meetings',
@@ -114,6 +122,25 @@ COUNTRY_FLAGS = {
 
 # ── HELPERS ────────────────────────────────────────────────────────────────────
 
+def read_csv_dedup(path):
+    """
+    Like csv.DictReader but makes duplicate column names unique by appending
+    _2, _3, ... so that repeated 'Select all that apply' headers are preserved.
+    """
+    with open(path, newline='', encoding='utf-8-sig') as f:
+        reader = csv.reader(f)
+        raw_headers = next(reader)
+        seen = {}
+        headers = []
+        for h in raw_headers:
+            if h in seen:
+                seen[h] += 1
+                headers.append(f'{h}_{seen[h]}')
+            else:
+                seen[h] = 1
+                headers.append(h)
+        return [dict(zip(headers, row)) for row in reader]
+
 def slugify(text):
     return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]', '-', text.lower())).strip('-')
 
@@ -123,6 +150,60 @@ def parse_list(text):
         return []
     items = re.split(r'\s*[;,\n]\s*', text)
     return [i.strip() for i in items if i.strip()]
+
+# Known EPE topic strings (sorted longest-first for greedy matching)
+_EPE_TOPICS_SORTED = sorted([
+    'Care economy and social reproduction',
+    'Climate, green transition, and energy policy',
+    'Comparative capitalism and varieties of capitalism',
+    'Corporate governance and ownership',
+    'Development economics and state capacity',
+    'Digital economy and platform labor',
+    'Feminist political economy',
+    'Financialization and financial markets',
+    'Global value chains and trade',
+    'Housing, land, and urban economy',
+    'Industrial policy and structural transformation',
+    'Inequality and redistribution',
+    'Labor markets, unions, and employment',
+    'Migration and labor mobility',
+    'Monetary policy, central banking, and debt',
+    'Post-colonial and decolonial political economy',
+    'Racial capitalism and economic justice',
+    'Social protection and welfare state',
+    'State-market relations and regulation',
+    'Technology, automation, and AI',
+    'Other (please describe below)',
+], key=len, reverse=True)
+
+def parse_checkbox_topics(text):
+    """
+    Parse a Google Forms checkbox export where options are joined by ', '.
+    Uses greedy known-vocabulary matching so multi-comma option names
+    (e.g. 'Labor markets, unions, and employment') are kept intact.
+    Falls back to comma-splitting for unrecognised tokens.
+    """
+    if not text or not text.strip():
+        return []
+    results = []
+    remaining = text.strip()
+    while remaining:
+        matched = False
+        for topic in _EPE_TOPICS_SORTED:
+            if remaining == topic or remaining.startswith(topic + ', '):
+                if topic.lower() != 'other (please describe below)':
+                    results.append(topic)
+                remaining = remaining[len(topic):].lstrip(', ')
+                matched = True
+                break
+        if not matched:
+            # Not a known topic — take up to the next ', ' as a free-text entry
+            idx = remaining.find(', ')
+            token = remaining[:idx].strip() if idx != -1 else remaining.strip()
+            if token:
+                results.append(token)
+            remaining = remaining[idx + 2:] if idx != -1 else ''
+    return results
 
 def parse_timestamp(ts):
     for fmt in ['%m/%d/%Y %H:%M:%S', '%Y-%m-%d %H:%M:%S', '%m/%d/%Y %H:%M', '%Y-%m-%d']:
@@ -138,13 +219,18 @@ def get(row, col_map, key):
 
 # ── CENTERS ────────────────────────────────────────────────────────────────────
 
+def merge_topics(row, col_map, checkbox_key, text_key):
+    """Combine checkbox selections and free-text overflow into one list."""
+    items = parse_checkbox_topics(get(row, col_map, checkbox_key))
+    items += parse_list(get(row, col_map, text_key))
+    return items
+
 def process_centers(csv_path):
     if not csv_path.exists():
         print(f'  [SKIP] {csv_path} not found — keeping existing centers.json.')
         return None
 
-    with open(csv_path, newline='', encoding='utf-8-sig') as f:
-        rows = list(csv.DictReader(f))
+    rows = read_csv_dedup(csv_path)
     print(f'  {len(rows)} center response(s) in CSV.')
 
     # Deduplicate by center name, keep latest timestamp
@@ -179,9 +265,9 @@ def process_centers(csv_path):
             'director':           get(row, CENTER_COLUMNS, 'director'),
             'contact':            get(row, CENTER_COLUMNS, 'contact'),
             'year_established':   get(row, CENTER_COLUMNS, 'year_established'),
-            'topics_current':     parse_list(get(row, CENTER_COLUMNS, 'topics_current')),
-            'topics_anticipated': parse_list(get(row, CENTER_COLUMNS, 'topics_anticipated')),
-            'topics_would_like':  parse_list(get(row, CENTER_COLUMNS, 'topics_would_like')),
+            'topics_current':     merge_topics(row, CENTER_COLUMNS, 'topics_current', 'topics_current_text'),
+            'topics_anticipated': merge_topics(row, CENTER_COLUMNS, 'topics_anticipated', 'topics_anticipated_text'),
+            'topics_would_like':  merge_topics(row, CENTER_COLUMNS, 'topics_would_like', 'topics_would_like_text'),
             'focus_areas':        parse_list(get(row, CENTER_COLUMNS, 'focus_areas')),
             'current_projects':   get(row, CENTER_COLUMNS, 'current_projects'),
             'funding_sources':    get(row, CENTER_COLUMNS, 'funding_sources'),
@@ -202,8 +288,7 @@ def process_individuals(csv_path, centers):
 
     center_lookup = {c['name'].lower(): c['id'] for c in (centers or [])}
 
-    with open(csv_path, newline='', encoding='utf-8-sig') as f:
-        rows = list(csv.DictReader(f))
+    rows = read_csv_dedup(csv_path)
     print(f'  {len(rows)} individual response(s) in CSV.')
 
     # Deduplicate by email (fallback to name)
@@ -239,9 +324,9 @@ def process_individuals(csv_path, centers):
             'region':              COUNTRY_TO_REGION.get(country, 'Other'),
             'email':               get(row, INDIVIDUAL_COLUMNS, 'email'),
             'website':             get(row, INDIVIDUAL_COLUMNS, 'website'),
-            'topics_current':      parse_list(get(row, INDIVIDUAL_COLUMNS, 'topics_current')),
-            'topics_anticipated':  parse_list(get(row, INDIVIDUAL_COLUMNS, 'topics_anticipated')),
-            'topics_would_like':   parse_list(get(row, INDIVIDUAL_COLUMNS, 'topics_would_like')),
+            'topics_current':      merge_topics(row, INDIVIDUAL_COLUMNS, 'topics_current', 'topics_current_text'),
+            'topics_anticipated':  merge_topics(row, INDIVIDUAL_COLUMNS, 'topics_anticipated', 'topics_anticipated_text'),
+            'topics_would_like':   merge_topics(row, INDIVIDUAL_COLUMNS, 'topics_would_like', 'topics_would_like_text'),
             'teaching_regions':    parse_list(get(row, INDIVIDUAL_COLUMNS, 'teaching_regions')),
             'teaching_levels':     parse_list(get(row, INDIVIDUAL_COLUMNS, 'teaching_levels')),
             'connected_networks':  parse_list(get(row, INDIVIDUAL_COLUMNS, 'connected_networks')),
@@ -256,17 +341,19 @@ def process_individuals(csv_path, centers):
 
 def find_latest_csv(data_dir, keywords):
     """
-    Return the most recently modified CSV in data_dir whose filename contains
-    any of the given keywords (case-insensitive). Falls back to None if not found.
+    Search data/, csv/, and the project root for CSVs whose filename contains
+    any keyword (case-insensitive). Returns the most recently modified match.
     """
+    root = data_dir.parent
+    search_dirs = [data_dir, root / 'csv', root]
     candidates = [
-        p for p in data_dir.glob('*.csv')
+        p for d in search_dirs if d.exists()
+        for p in d.glob('*.csv')
         if any(k.lower() in p.name.lower() for k in keywords)
     ]
     if not candidates:
         return None
-    latest = max(candidates, key=lambda p: p.stat().st_mtime)
-    return latest
+    return max(candidates, key=lambda p: p.stat().st_mtime)
 
 
 # ── MAIN ───────────────────────────────────────────────────────────────────────
