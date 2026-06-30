@@ -123,6 +123,8 @@ def main():
     total = 0
 
     for i, ind in enumerate(inds):
+        if ind.get('topics_current'):
+            continue  # already mapped — don't overwrite richer existing data
         url = ind.get('website', '')
         if not url or '/pesquisadores/' in url:
             continue
