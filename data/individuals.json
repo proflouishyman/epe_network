@@ -16,7 +16,9 @@
       "Climate & Green Transition",
       "Economic History",
       "Inequality",
-      "Political Economy"
+      "Political Economy",
+      "History of Capitalism",
+      "Labor Markets & Employment"
     ],
     "topics_anticipated": [],
     "topics_would_like": [
@@ -48,7 +50,11 @@
     "email": "michael.ralph@howard.edu",
     "website": "https://afroamericanstudies.howard.edu/michael-ralph",
     "topics_current": [
-      "Education Economics"
+      "Education Economics",
+      "Finance, Banking & Credit",
+      "History of Capitalism",
+      "Race, Ethnicity & Economic Inequality",
+      "Inequality"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -163,7 +169,13 @@
     "region": "Latin America",
     "email": "alexandre.abdal@fgv.br",
     "website": "https://cebrap.org.br/pesquisador/aabdal",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Sociology",
+      "Economic Development",
+      "Innovation Policy",
+      "Labor Markets & Employment",
+      "Public Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -185,7 +197,11 @@
     "region": "Latin America",
     "email": "amalonso@usp.br",
     "website": "https://cebrap.org.br/pesquisador/aalonso",
-    "topics_current": [],
+    "topics_current": [
+      "Democracy & Governance",
+      "Political Institutions",
+      "Environmental Economics"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1043,7 +1059,13 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/ben-armstrong/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "Industrial Policy & Structural Transformation",
+      "Economic Development",
+      "Innovation Policy",
+      "AI, Automation & Technology"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1067,7 +1089,8 @@
     "website": "https://ipc.mit.edu/people/julie-shah/",
     "topics_current": [
       "AI, Automation & Technology",
-      "Future of Work & Automation"
+      "Future of Work & Automation",
+      "Industrial Policy & Structural Transformation"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -1090,7 +1113,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/richard-lester/",
-    "topics_current": [],
+    "topics_current": [
+      "Climate & Green Transition",
+      "Innovation Policy",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1112,7 +1139,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/florian-metzler/",
-    "topics_current": [],
+    "topics_current": [
+      "Innovation Policy",
+      "Climate & Green Transition",
+      "AI, Automation & Technology"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1138,7 +1169,8 @@
       "Labor Markets & Employment",
       "Future of Work & Automation",
       "AI, Automation & Technology",
-      "Inequality"
+      "Inequality",
+      "Trade & Globalization"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -1161,7 +1193,13 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/suzanne-berger/",
-    "topics_current": [],
+    "topics_current": [
+      "Political Institutions",
+      "Industrial Policy & Structural Transformation",
+      "Trade & Globalization",
+      "Labor Markets & Employment",
+      "Political Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1183,7 +1221,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/julie-diop/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Future of Work & Automation",
+      "Industrial Policy & Structural Transformation",
+      "Labor Markets & Employment"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1205,7 +1248,10 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/christopher-fourie/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1227,7 +1273,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/john-hart/",
-    "topics_current": [],
+    "topics_current": [
+      "Industrial Policy & Structural Transformation",
+      "AI, Automation & Technology",
+      "Innovation Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1249,7 +1299,13 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/jason-jackson/",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Institutional Economics",
+      "State & Markets",
+      "Economic Development",
+      "History of Capitalism"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1271,7 +1327,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/kate-kellogg/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "AI, Automation & Technology",
+      "Labor Markets & Employment",
+      "Economic Sociology"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1293,7 +1354,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/retsef-levi/",
-    "topics_current": [],
+    "topics_current": [
+      "Health Economics",
+      "Finance, Banking & Credit",
+      "State & Markets",
+      "Macroeconomics & Monetary Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1315,7 +1381,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/david-mindell/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "Innovation Policy",
+      "History of Capitalism",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1337,7 +1408,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/dylan-nelson/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "Labor Markets & Employment",
+      "Finance, Banking & Credit",
+      "State & Markets"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1359,7 +1435,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/shakked-noy/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Labor Markets & Employment",
+      "Future of Work & Automation",
+      "Inequality"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1384,7 +1465,9 @@
     "topics_current": [
       "Labor Markets & Employment",
       "Labor, Unions & Collective Action",
-      "Future of Work & Automation"
+      "Future of Work & Automation",
+      "Inequality",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -1407,7 +1490,14 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/michael-piore/",
-    "topics_current": [],
+    "topics_current": [
+      "Labor Markets & Employment",
+      "Inequality",
+      "Labor, Unions & Collective Action",
+      "Digital Economy & Platform Labor",
+      "Race, Ethnicity & Economic Inequality",
+      "Institutional Economics"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1429,7 +1519,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/prerna-ravi/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Labor Markets & Employment",
+      "Gender & the Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1451,7 +1545,13 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/elisabeth-b-reynolds/",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Innovation Policy",
+      "Industrial Policy & Structural Transformation",
+      "Labor Markets & Employment",
+      "Future of Work & Automation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1473,7 +1573,10 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/lindsay-sanneman/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1495,7 +1598,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/sanjay-sarma/",
-    "topics_current": [],
+    "topics_current": [
+      "Industrial Policy & Structural Transformation",
+      "Future of Work & Automation",
+      "Trade & Globalization",
+      "Innovation Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1517,7 +1625,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/azfar-sulaiman/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Future of Work & Automation",
+      "Labor Markets & Employment"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1539,7 +1651,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/leandra-tejedor/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Future of Work & Automation",
+      "Labor Markets & Employment"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1561,7 +1677,12 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/yilmaz-uygun/",
-    "topics_current": [],
+    "topics_current": [
+      "Innovation Policy",
+      "Industrial Policy & Structural Transformation",
+      "Economic Development",
+      "State & Markets"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1583,7 +1704,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/felix-wang/",
-    "topics_current": [],
+    "topics_current": [
+      "Future of Work & Automation",
+      "AI, Automation & Technology",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1605,7 +1730,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/reimar-weissbach/",
-    "topics_current": [],
+    "topics_current": [
+      "Industrial Policy & Structural Transformation",
+      "Future of Work & Automation",
+      "State & Markets"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1630,7 +1759,8 @@
     "topics_current": [
       "Labor Markets & Employment",
       "Inequality",
-      "Economic Sociology"
+      "Economic Sociology",
+      "Labor, Unions & Collective Action"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -1653,7 +1783,11 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/whitney-zhang/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Labor Markets & Employment",
+      "Future of Work & Automation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1675,7 +1809,10 @@
     "region": "North America",
     "email": "",
     "website": "https://ipc.mit.edu/people/sabiyyah-ali/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Future of Work & Automation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -1698,7 +1835,10 @@
     "email": "",
     "website": "https://polisci.columbia.edu/content/ira-i-katznelson",
     "topics_current": [
-      "Political Economy"
+      "Political Economy",
+      "Political Institutions",
+      "Race, Ethnicity & Economic Inequality",
+      "Democracy & Governance"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -1725,7 +1865,8 @@
       "Political Economy",
       "Labor Markets & Employment",
       "Inequality",
-      "Economic History"
+      "Economic History",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -1810,7 +1951,13 @@
     "region": "North America",
     "email": "",
     "website": "https://polisci.columbia.edu/content/alexander-w-hertel-fernandez",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "State & Markets",
+      "Labor, Unions & Collective Action",
+      "Public Policy",
+      "Political Institutions"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -2024,7 +2171,13 @@
     "region": "North America",
     "email": "",
     "website": "https://www.sipa.columbia.edu/communities-connections/faculty/jeffry-frieden",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Latin America",
+      "Finance, Banking & Credit",
+      "Trade & Globalization",
+      "Macroeconomics & Monetary Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -2865,7 +3018,13 @@
     "region": "Latin America",
     "email": "meslava@uniandes.edu.co",
     "website": "https://sites.google.com/view/marcela-eslava/home",
-    "topics_current": [],
+    "topics_current": [
+      "State & Markets",
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Macroeconomics & Monetary Policy",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -2887,7 +3046,10 @@
     "region": "Latin America",
     "email": "p.jaramillo26@uniandes.edu.co",
     "website": "https://sites.google.com/view/paulajaramillo/home",
-    "topics_current": [],
+    "topics_current": [
+      "Institutional Economics",
+      "Public Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -2931,7 +3093,13 @@
     "region": "Latin America",
     "email": "ja.guerra@uniandes.edu.co",
     "website": "https://jguerraforero.wixsite.com/joseaguerra",
-    "topics_current": [],
+    "topics_current": [
+      "Institutional Economics",
+      "Political Economy",
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Inequality"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -2956,7 +3124,9 @@
     "topics_current": [
       "Public Policy",
       "Latin America",
-      "Political Economy"
+      "Political Economy",
+      "Institutional Economics",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -2979,7 +3149,13 @@
     "region": "Latin America",
     "email": "lfergusson@uniandes.edu.co",
     "website": "https://leopoldofergusson.com",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Economic Development",
+      "Institutional Economics",
+      "Latin America",
+      "Political Institutions"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3003,7 +3179,11 @@
     "website": "https://man-fern.github.io",
     "topics_current": [
       "Health Economics",
-      "Latin America"
+      "Latin America",
+      "Labor Markets & Employment",
+      "Inequality",
+      "Economic Development",
+      "Gender & the Economy"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3026,7 +3206,12 @@
     "region": "Latin America",
     "email": "obecerra@uniandes.edu.co",
     "website": "https://sites.google.com/site/orbecerra/",
-    "topics_current": [],
+    "topics_current": [
+      "Labor Markets & Employment",
+      "Economic Development",
+      "Public Policy",
+      "Labor, Unions & Collective Action"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3048,7 +3233,11 @@
     "region": "Latin America",
     "email": "jobonill@uniandes.edu.co",
     "website": "https://jobonill.wixsite.com/jorgebonilla",
-    "topics_current": [],
+    "topics_current": [
+      "Environmental Economics",
+      "Climate & Green Transition",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3114,7 +3303,13 @@
     "region": "Latin America",
     "email": "rbernal@uniandes.edu.co",
     "website": "https://sites.google.com/view/raquelbernal/",
-    "topics_current": [],
+    "topics_current": [
+      "Labor Markets & Employment",
+      "Gender & the Economy",
+      "Economic Development",
+      "Inequality",
+      "Public Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3136,7 +3331,14 @@
     "region": "Latin America",
     "email": "nicolas.de.roux@uniandes.edu.co",
     "website": "https://sites.google.com/site/nicoderoux/",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Finance, Banking & Credit",
+      "Environmental Economics",
+      "State & Markets",
+      "Trade & Globalization"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3158,7 +3360,12 @@
     "region": "Latin America",
     "email": "j.helo@uniandes.edu.co",
     "website": "https://sites.google.com/view/julianahelo",
-    "topics_current": [],
+    "topics_current": [
+      "Environmental Economics",
+      "Health Economics",
+      "Climate & Green Transition",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3180,7 +3387,13 @@
     "region": "Latin America",
     "email": "jtovar@uniandes.edu.co",
     "website": "https://sites.google.com/view/jorgetovar/home",
-    "topics_current": [],
+    "topics_current": [
+      "Trade & Globalization",
+      "History of Capitalism",
+      "Latin America",
+      "Industrial Policy & Structural Transformation",
+      "Labor Markets & Employment"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3224,7 +3437,12 @@
     "region": "Latin America",
     "email": "d.bardey@uniandes.edu.co",
     "website": "https://sites.google.com/site/davidbardey/",
-    "topics_current": [],
+    "topics_current": [
+      "Health Economics",
+      "Finance, Banking & Credit",
+      "Macroeconomics & Monetary Policy",
+      "Latin America"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3268,7 +3486,12 @@
     "region": "Latin America",
     "email": "d.perez-reyna@uniandes.edu.co",
     "website": "https://sites.google.com/site/davidperezreyna/",
-    "topics_current": [],
+    "topics_current": [
+      "Finance, Banking & Credit",
+      "Macroeconomics & Monetary Policy",
+      "Labor Markets & Employment",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3290,7 +3513,13 @@
     "region": "Latin America",
     "email": "mavelez@uniandes.edu.co",
     "website": "https://sites.google.com/view/maria-alejandra-velez",
-    "topics_current": [],
+    "topics_current": [
+      "Environmental Economics",
+      "Institutional Economics",
+      "Global South Political Economy",
+      "State & Markets",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3358,7 +3587,10 @@
     "website": "https://ignaciomsarmiento.github.io",
     "topics_current": [
       "AI, Automation & Technology",
-      "Latin America"
+      "Latin America",
+      "Economic Development",
+      "Public Policy",
+      "Inequality"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3381,7 +3613,13 @@
     "region": "Latin America",
     "email": "t.rodriguezb@uniandes.edu.co",
     "website": "https://sites.google.com/site/tomasrodriguezbarraquer/",
-    "topics_current": [],
+    "topics_current": [
+      "Institutional Economics",
+      "Economic Sociology",
+      "Political Economy",
+      "Finance, Banking & Credit",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3403,7 +3641,13 @@
     "region": "Latin America",
     "email": "ariascos@uniandes.edu.co",
     "website": "https://alvaroriascos.com",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Health Economics",
+      "Public Policy",
+      "Macroeconomics & Monetary Policy",
+      "Climate & Green Transition"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3425,7 +3669,12 @@
     "region": "Latin America",
     "email": "onupia@uniandes.edu.co",
     "website": "https://sites.google.com/view/oskarnupia",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Public Policy",
+      "Political Institutions",
+      "State & Markets"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3447,7 +3696,13 @@
     "region": "Latin America",
     "email": "a.moya@uniandes.edu.co",
     "website": "https://sites.google.com/view/andresmoya",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Inequality",
+      "Institutional Economics",
+      "Public Policy",
+      "Latin America"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3513,7 +3768,13 @@
     "region": "Latin America",
     "email": "r.laajaj@uniandes.edu.co",
     "website": "https://laajaj.com",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Inequality",
+      "Public Policy",
+      "Institutional Economics",
+      "Labor Markets & Employment"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3536,7 +3797,9 @@
     "email": "camilagalindo@uniandes.edu.co",
     "website": "https://camilagalindop.github.io",
     "topics_current": [
-      "Latin America"
+      "Latin America",
+      "Labor Markets & Employment",
+      "Inequality"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3584,7 +3847,11 @@
     "topics_current": [
       "Economic History",
       "Latin America",
-      "Political Economy"
+      "Political Economy",
+      "Economic Development",
+      "Institutional Economics",
+      "Labor Markets & Employment",
+      "History of Capitalism"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3608,7 +3875,12 @@
     "email": "a.ham@uniandes.edu.co",
     "website": "https://andresham.com",
     "topics_current": [
-      "Education Economics"
+      "Education Economics",
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Inequality",
+      "Climate & Green Transition",
+      "Public Policy"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3631,7 +3903,12 @@
     "region": "Latin America",
     "email": "m.pardom@uniandes.edu.co",
     "website": "https://socorro-martinez.com",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Political Economy",
+      "Institutional Economics",
+      "History of Capitalism"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3655,7 +3932,8 @@
     "website": "https://smontanoc.github.io",
     "topics_current": [
       "Finance, Banking & Credit",
-      "Latin America"
+      "Latin America",
+      "Labor Markets & Employment"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3678,7 +3956,12 @@
     "region": "Latin America",
     "email": "fasanche@uniandes.edu.co",
     "website": "https://sites.google.com/view/fabio-sanchez-torres",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Public Policy",
+      "History of Capitalism"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3789,7 +4072,11 @@
     "email": "",
     "website": "https://snfagora.jhu.edu/directory/yuen-yuen-ang/",
     "topics_current": [
-      "Political Economy"
+      "Political Economy",
+      "Political Institutions",
+      "Institutional Economics",
+      "State & Markets",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3815,7 +4102,9 @@
     "topics_current": [
       "History of Capitalism",
       "Political Economy",
-      "Comparative Capitalism"
+      "Comparative Capitalism",
+      "Future of Work & Automation",
+      "Institutional Economics"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -3888,7 +4177,13 @@
     "region": "North America",
     "email": "",
     "website": "https://snfagora.jhu.edu/directory/steven-teles/",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Public Policy",
+      "Inequality",
+      "Democracy & Governance",
+      "Political Institutions"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -3932,7 +4227,12 @@
     "region": "North America",
     "email": "",
     "website": "https://snfagora.jhu.edu/directory/emma-cytrynbaum/",
-    "topics_current": [],
+    "topics_current": [
+      "Political Institutions",
+      "Digital Economy & Platform Labor",
+      "Democracy & Governance",
+      "Public Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -4096,7 +4396,9 @@
       "Democracy & Governance",
       "Public Policy",
       "Inequality",
-      "Political Economy"
+      "Political Economy",
+      "State & Markets",
+      "Political Institutions"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4122,7 +4424,10 @@
     "topics_current": [
       "Climate & Green Transition",
       "Energy Policy",
-      "Education Economics"
+      "Education Economics",
+      "Industrial Policy & Structural Transformation",
+      "Innovation Policy",
+      "Public Policy"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4148,7 +4453,8 @@
     "topics_current": [
       "Economic Sociology",
       "Digital Economy & Platform Labor",
-      "Political Economy"
+      "Political Economy",
+      "Institutional Economics"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4175,7 +4481,9 @@
       "State & Markets",
       "Climate & Green Transition",
       "Democracy & Governance",
-      "Political Economy"
+      "Political Economy",
+      "Public Policy",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4205,7 +4513,8 @@
       "Finance, Banking & Credit",
       "Democracy & Governance",
       "Inequality",
-      "Political Economy"
+      "Political Economy",
+      "History of Capitalism"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4229,7 +4538,12 @@
     "email": "",
     "website": "https://besi.berkeley.edu/people/sarah-anzia/",
     "topics_current": [
-      "Public Policy"
+      "Public Policy",
+      "Labor, Unions & Collective Action",
+      "Political Institutions",
+      "State & Markets",
+      "Economic Development",
+      "Political Economy"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4259,7 +4573,8 @@
       "Democracy & Governance",
       "Law & Political Economy",
       "Political Economy",
-      "Economic Sociology"
+      "Economic Sociology",
+      "Institutional Economics"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4282,7 +4597,13 @@
     "region": "North America",
     "email": "",
     "website": "https://besi.berkeley.edu/people/armando-lara-millan/",
-    "topics_current": [],
+    "topics_current": [
+      "Health Economics",
+      "Digital Economy & Platform Labor",
+      "Institutional Economics",
+      "Public Policy",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -4308,7 +4629,11 @@
       "Labor Markets & Employment",
       "Democracy & Governance",
       "Inequality",
-      "Political Economy"
+      "Political Economy",
+      "State & Markets",
+      "AI, Automation & Technology",
+      "Political Institutions",
+      "Industrial Policy & Structural Transformation"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4688,7 +5013,13 @@
     "region": "North America",
     "email": "",
     "website": "https://besi.berkeley.edu/people/vinod-aggarwal/",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Trade & Globalization",
+      "Industrial Policy & Structural Transformation",
+      "Digital Economy & Platform Labor",
+      "Innovation Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -4711,7 +5042,13 @@
     "email": "",
     "website": "https://besi.berkeley.edu/people/morgan-ames/",
     "topics_current": [
-      "Education Economics"
+      "Education Economics",
+      "Innovation Policy",
+      "AI, Automation & Technology",
+      "Digital Economy & Platform Labor",
+      "Inequality",
+      "Race, Ethnicity & Economic Inequality",
+      "Global South Political Economy"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -4734,7 +5071,12 @@
     "region": "North America",
     "email": "",
     "website": "https://besi.berkeley.edu/people/desiree-fields/",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Digital Economy & Platform Labor",
+      "Finance, Banking & Credit",
+      "Political Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -4756,7 +5098,13 @@
     "region": "North America",
     "email": "",
     "website": "https://besi.berkeley.edu/people/jonathan-simon/",
-    "topics_current": [],
+    "topics_current": [
+      "Race, Ethnicity & Economic Inequality",
+      "Inequality",
+      "Political Institutions",
+      "Public Policy",
+      "Democracy & Governance"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5035,7 +5383,10 @@
       "Innovation Policy",
       "Industrial Policy & Structural Transformation",
       "State & Markets",
-      "Finance, Banking & Credit"
+      "Finance, Banking & Credit",
+      "Public Policy",
+      "Climate & Green Transition",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -5059,7 +5410,11 @@
     "email": "",
     "website": "https://profiles.ucl.ac.uk/61603-rainer-kattel",
     "topics_current": [
-      "Democracy & Governance"
+      "Democracy & Governance",
+      "Innovation Policy",
+      "Public Policy",
+      "Industrial Policy & Structural Transformation",
+      "Institutional Economics"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -5082,7 +5437,12 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/89749-david-eaves",
-    "topics_current": [],
+    "topics_current": [
+      "Democracy & Governance",
+      "Innovation Policy",
+      "Public Policy",
+      "AI, Automation & Technology"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5104,7 +5464,13 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/94616",
-    "topics_current": [],
+    "topics_current": [
+      "Political Economy",
+      "Innovation Policy",
+      "Digital Economy & Platform Labor",
+      "Trade & Globalization",
+      "Industrial Policy & Structural Transformation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5127,7 +5493,11 @@
     "email": "",
     "website": "https://profiles.ucl.ac.uk/72037",
     "topics_current": [
-      "Public Policy"
+      "Public Policy",
+      "Economic Development",
+      "Inequality",
+      "Global South Political Economy",
+      "Finance, Banking & Credit"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -5151,7 +5521,10 @@
     "email": "",
     "website": "https://profiles.ucl.ac.uk/64753",
     "topics_current": [
-      "Finance, Banking & Credit"
+      "Finance, Banking & Credit",
+      "Macroeconomics & Monetary Policy",
+      "Climate & Green Transition",
+      "Economic Development"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -5196,7 +5569,12 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/78061",
-    "topics_current": [],
+    "topics_current": [
+      "Finance, Banking & Credit",
+      "Macroeconomics & Monetary Policy",
+      "Climate & Green Transition",
+      "Environmental Economics"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5330,7 +5708,14 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/104608",
-    "topics_current": [],
+    "topics_current": [
+      "Finance, Banking & Credit",
+      "Industrial Policy & Structural Transformation",
+      "Macroeconomics & Monetary Policy",
+      "Economic Development",
+      "Climate & Green Transition",
+      "Political Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5374,7 +5759,14 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/107097",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Gender & the Economy",
+      "Digital Economy & Platform Labor",
+      "Global South Political Economy",
+      "Future of Work & Automation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5528,7 +5920,12 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/89031",
-    "topics_current": [],
+    "topics_current": [
+      "Democracy & Governance",
+      "Economic Development",
+      "Innovation Policy",
+      "Public Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5550,7 +5947,12 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/91948",
-    "topics_current": [],
+    "topics_current": [
+      "Institutional Economics",
+      "Public Policy",
+      "Innovation Policy",
+      "Gender & the Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5572,7 +5974,14 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/93195",
-    "topics_current": [],
+    "topics_current": [
+      "Industrial Policy & Structural Transformation",
+      "Trade & Globalization",
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Climate & Green Transition",
+      "Political Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5704,7 +6113,14 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/76225",
-    "topics_current": [],
+    "topics_current": [
+      "Industrial Policy & Structural Transformation",
+      "Trade & Globalization",
+      "State & Markets",
+      "Economic Development",
+      "Digital Economy & Platform Labor",
+      "Climate & Green Transition"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5726,7 +6142,12 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/76299",
-    "topics_current": [],
+    "topics_current": [
+      "Public Policy",
+      "Political Institutions",
+      "State & Markets",
+      "Democracy & Governance"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5748,7 +6169,12 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/75132",
-    "topics_current": [],
+    "topics_current": [
+      "Political Institutions",
+      "Public Policy",
+      "State & Markets",
+      "Democracy & Governance"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -5770,7 +6196,11 @@
     "region": "Europe",
     "email": "",
     "website": "https://profiles.ucl.ac.uk/94351",
-    "topics_current": [],
+    "topics_current": [
+      "Finance, Banking & Credit",
+      "Macroeconomics & Monetary Policy",
+      "Political Economy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -6044,7 +6474,13 @@
     "region": "North America",
     "email": "",
     "website": "https://sites.google.com/view/jacobgreenspon",
-    "topics_current": [],
+    "topics_current": [
+      "Labor Markets & Employment",
+      "Climate & Green Transition",
+      "Innovation Policy",
+      "Future of Work & Automation",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -6066,7 +6502,13 @@
     "region": "North America",
     "email": "",
     "website": "https://renelivas.com",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Labor Markets & Employment",
+      "Future of Work & Automation",
+      "Industrial Policy & Structural Transformation",
+      "Inequality"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -6221,7 +6663,12 @@
     "email": "",
     "website": "https://www.linkedin.com/in/heather-boushey-0bab129a/",
     "topics_current": [
-      "Energy Policy"
+      "Energy Policy",
+      "Inequality",
+      "Labor Markets & Employment",
+      "Gender & the Economy",
+      "Race, Ethnicity & Economic Inequality",
+      "Macroeconomics & Monetary Policy"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -6313,7 +6760,10 @@
     "topics_current": [
       "Labor Markets & Employment",
       "Public Policy",
-      "Education Economics"
+      "Education Economics",
+      "AI, Automation & Technology",
+      "Innovation Policy",
+      "Digital Economy & Platform Labor"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -6358,7 +6808,12 @@
     "region": "North America",
     "email": "",
     "website": "https://www.victosilva.com/",
-    "topics_current": [],
+    "topics_current": [
+      "Digital Economy & Platform Labor",
+      "AI, Automation & Technology",
+      "Industrial Policy & Structural Transformation",
+      "Economic Development"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -6402,7 +6857,12 @@
     "region": "North America",
     "email": "",
     "website": "https://www.linkedin.com/in/adhoadinegoro/",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Global South Political Economy",
+      "Macroeconomics & Monetary Policy",
+      "Public Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -6490,7 +6950,12 @@
     "region": "North America",
     "email": "",
     "website": "https://www.linkedin.com/in/nicholas-cocozzelli-261367175/",
-    "topics_current": [],
+    "topics_current": [
+      "Inequality",
+      "Labor Markets & Employment",
+      "Public Policy",
+      "Macroeconomics & Monetary Policy"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -6513,7 +6978,11 @@
     "email": "",
     "website": "https://www.linkedin.com/in/adam-delgado/",
     "topics_current": [
-      "Education Economics"
+      "Education Economics",
+      "Economic Development",
+      "Public Policy",
+      "Race, Ethnicity & Economic Inequality",
+      "Inequality"
     ],
     "topics_anticipated": [],
     "topics_would_like": [],
@@ -6580,7 +7049,13 @@
     "region": "North America",
     "email": "",
     "website": "https://www.linkedin.com/in/marin-furuyama/",
-    "topics_current": [],
+    "topics_current": [
+      "AI, Automation & Technology",
+      "Labor, Unions & Collective Action",
+      "Democracy & Governance",
+      "Public Policy",
+      "Future of Work & Automation"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],
@@ -8616,7 +9091,14 @@
     "region": "Africa",
     "email": "",
     "website": "https://bradlow.princeton.edu",
-    "topics_current": [],
+    "topics_current": [
+      "Economic Development",
+      "Inequality",
+      "Political Institutions",
+      "Global South Political Economy",
+      "Climate & Green Transition",
+      "Democracy & Governance"
+    ],
     "topics_anticipated": [],
     "topics_would_like": [],
     "teaching_regions": [],

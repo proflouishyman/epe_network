@@ -12,17 +12,20 @@ let activeRegionFilter = null;
 
 async function loadData() {
   try {
-    const [cRes, iRes, tRes] = await Promise.all([
+    const [cRes, iRes] = await Promise.all([
       fetch('data/centers.json'),
       fetch('data/individuals.json'),
-      fetch('data/topics.json'),
     ]);
     centers     = await cRes.json();
     individuals = await iRes.json();
-    topicTaxonomy = await tRes.json();
   } catch (e) {
     console.error('Could not load data:', e);
   }
+  // topics.json is optional — load separately so it never breaks the main render
+  try {
+    const tRes = await fetch('data/topics.json');
+    if (tRes.ok) topicTaxonomy = await tRes.json();
+  } catch (e) { /* silent fallback */ }
   init();
 }
 
