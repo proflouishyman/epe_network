@@ -303,6 +303,12 @@ function addOption(sel, value, text) {
   sel.appendChild(opt);
 }
 
+// Returns the last-name token used for alphabetical sorting and indexing.
+function scholarSortKey(name) {
+  const parts = name.trim().split(/\s+/);
+  return parts[parts.length - 1].normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase();
+}
+
 function buildScholarsView() {
   const q        = document.getElementById('scholar-search').value.toLowerCase();
   const centerId = document.getElementById('center-filter').value;
@@ -322,38 +328,79 @@ function buildScholarsView() {
     (i.topics_would_like || []).some(t => t.toLowerCase().includes(q))
   );
 
+  // Sort alphabetically by last name
+  filtered = [...filtered].sort((a, b) => scholarSortKey(a.name).localeCompare(scholarSortKey(b.name)));
+
   document.getElementById('scholars-count').textContent =
     `${filtered.length} scholar${filtered.length !== 1 ? 's' : ''}`;
 
   const list = document.getElementById('scholars-list');
   if (!filtered.length) {
     list.innerHTML = '<div class="empty-state"><p>No scholars match your filters.</p></div>';
+    renderAlphaIndex([], list);
     return;
   }
 
-  list.innerHTML = filtered.map(i => {
-    const center = centers.find(c => c.id === i.center_id);
-    const topicTags = [
-      ...(i.topics_current    || []).map(t => `<span class="tag current">${escHtml(t)}</span>`),
-      ...(i.topics_would_like || []).map(t => `<span class="tag would-like">${escHtml(t)}</span>`),
-    ];
-    return `
-      <div class="scholar-row" data-id="${escAttr(i.id)}" role="button" tabindex="0">
-        <div>
-          <div class="scholar-name">${escHtml(i.name)}</div>
-          <div class="scholar-meta">${escHtml([i.title, i.institution].filter(Boolean).join(' · '))}</div>
-          ${center ? `<div class="scholar-center">${escHtml(center.name)}</div>` : ''}
+  // Group by first letter of last name
+  const groups = new Map();
+  for (const i of filtered) {
+    const letter = scholarSortKey(i.name)[0] || '#';
+    if (!groups.has(letter)) groups.set(letter, []);
+    groups.get(letter).push(i);
+  }
+
+  // Build letter index bar
+  renderAlphaIndex([...groups.keys()], list);
+
+  // Render grouped rows
+  let html = '';
+  for (const [letter, scholars] of groups) {
+    html += `<div class="alpha-section-head" id="alpha-${letter}">${letter}</div>`;
+    html += scholars.map(i => {
+      const center = centers.find(c => c.id === i.center_id);
+      const topicTags = [
+        ...(i.topics_current    || []).map(t => `<span class="tag current">${escHtml(t)}</span>`),
+        ...(i.topics_would_like || []).map(t => `<span class="tag would-like">${escHtml(t)}</span>`),
+      ];
+      return `
+        <div class="scholar-row" data-id="${escAttr(i.id)}" role="button" tabindex="0">
+          <div>
+            <div class="scholar-name">${escHtml(i.name)}</div>
+            <div class="scholar-meta">${escHtml([i.title, i.institution].filter(Boolean).join(' · '))}</div>
+            ${center ? `<div class="scholar-center">${escHtml(center.name)}</div>` : ''}
+          </div>
+          <div class="scholar-topics">${topicTags.slice(0, 6).join('')}</div>
+          <div class="scholar-country">${escHtml(i.country || '')}</div>
         </div>
-        <div class="scholar-topics">${topicTags.slice(0, 6).join('')}</div>
-        <div class="scholar-country">${escHtml(i.country || '')}</div>
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
+  }
+  list.innerHTML = html;
 
   list.querySelectorAll('.scholar-row').forEach(row => {
     row.addEventListener('click', () => openScholarModal(row.dataset.id));
     row.addEventListener('keydown', e => { if (e.key === 'Enter') openScholarModal(row.dataset.id); });
   });
+}
+
+function renderAlphaIndex(activeLetters, listEl) {
+  const existing = document.getElementById('alpha-index');
+  if (existing) existing.remove();
+
+  const activeSet = new Set(activeLetters);
+  const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+  const bar = document.createElement('div');
+  bar.id = 'alpha-index';
+  bar.className = 'alpha-index';
+  bar.innerHTML = LETTERS.map(l => {
+    if (activeSet.has(l)) {
+      return `<a class="alpha-btn alpha-btn--active" href="#alpha-${l}">${l}</a>`;
+    }
+    return `<span class="alpha-btn alpha-btn--empty">${l}</span>`;
+  }).join('');
+
+  listEl.parentElement.insertBefore(bar, listEl);
 }
 
 function openScholarModal(id) {

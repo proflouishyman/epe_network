@@ -459,6 +459,56 @@ a { color: var(--terracotta); }
 .tag.would-like   { background: rgba(61,107,53,0.10); color: var(--forest); }
 
 /* === SCHOLARS LIST === */
+
+.alpha-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 10px 0 14px;
+}
+
+.alpha-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+
+.alpha-btn--active {
+  color: var(--terracotta);
+  background: rgba(176,94,62,0.08);
+}
+.alpha-btn--active:hover {
+  background: var(--terracotta);
+  color: var(--white);
+}
+
+.alpha-btn--empty {
+  color: var(--border-light);
+  cursor: default;
+  pointer-events: none;
+}
+
+.alpha-section-head {
+  background: var(--cream);
+  padding: 6px 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--charcoal-soft);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-light);
+  scroll-margin-top: 80px;
+}
+
 .scholars-list {
   border: 1px solid var(--border-light);
   border-radius: var(--radius);
