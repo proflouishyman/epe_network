@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPE Network — Emerging Political Economy</title>
+  <meta name="description" content="A global network of research centers focused on emerging political economy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <span class="brand-name">EPE Network</span>
+        <span class="brand-tagline">Emerging Political Economy</span>
+      </div>
+      <nav class="main-nav">
+        <button class="nav-tab active" data-tab="centers">Centers</button>
+        <button class="nav-tab" data-tab="scholars">Scholars</button>
+        <button class="nav-tab" data-tab="topics">Topics</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="hero-text">A global network of <strong id="stat-centers">—</strong> research centers across <strong id="stat-countries">—</strong> countries, connecting scholars working on emerging political economy.</p>
+      <div class="hero-actions">
+        <a class="hero-link" href="https://docs.google.com/forms/d/e/1FAIpQLSci_-chUcEJ8zRdVWyyek97IaOtf4I611DxgbxRu9hbSMZCvQ/viewform" target="_blank" rel="noopener">Register Your Center ↗</a>
+        <a class="hero-link" href="https://docs.google.com/forms/d/e/1FAIpQLSckdC5YvPYTOyeQ9T4aT-O_3hA1YWgbjM-45rCbX-_HFMH0mQ/viewform" target="_blank" rel="noopener">Register as a Scholar ↗</a>
+        <a class="hero-link hero-link--display" href="register.html" target="_blank" rel="noopener">Meeting Display ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sample-banner" id="sample-banner">
+    <span>⚠ Sample data — replace with real entries by running <code>python3 scripts/synthesize.py</code> after collecting form responses.</span>
+    <button onclick="document.getElementById('sample-banner').style.display='none'">×</button>
+  </div>
+
+  <main class="main-content">
+
+    <!-- CENTERS VIEW -->
+    <section id="centers-view" class="view active">
+      <div class="view-controls">
+        <input type="search" class="search-input" id="center-search" placeholder="Search centers, institutions, topics…">
+        <div class="filter-chips" id="region-filter-chips"></div>
+      </div>
+      <div class="results-count" id="centers-count"></div>
+      <div class="centers-grid" id="centers-grid"></div>
+    </section>
+
+    <!-- SCHOLARS VIEW -->
+    <section id="scholars-view" class="view">
+      <div class="view-controls">
+        <input type="search" class="search-input" id="scholar-search" placeholder="Search scholars, topics, institutions…">
+        <div class="filter-row">
+          <select class="filter-select" id="center-filter">
+            <option value="">All Centers</option>
+          </select>
+          <select class="filter-select" id="region-filter">
+            <option value="">All Regions</option>
+          </select>
+          <select class="filter-select" id="topic-filter">
+            <option value="">All Topics</option>
+          </select>
+        </div>
+      </div>
+      <div class="results-count" id="scholars-count"></div>
+      <div class="scholars-list" id="scholars-list"></div>
+    </section>
+
+    <!-- TOPICS VIEW -->
+    <section id="topics-view" class="view">
+      <div id="topics-intro" class="topics-intro">
+        <p>Click a topic to see all centers and scholars working in that area — now, anticipated, or desired.</p>
+      </div>
+      <div class="topics-cloud" id="topics-cloud"></div>
+      <div class="topic-results hidden" id="topic-results">
+        <button class="back-btn" id="topic-back">← All Topics</button>
+        <h2 class="topic-title" id="topic-title"></h2>
+        <div class="topic-results-grid">
+          <div class="topic-col">
+            <h3>Centers</h3>
+            <div id="topic-centers"></div>
+          </div>
+          <div class="topic-col">
+            <h3>Scholars</h3>
+            <div id="topic-scholars"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CENTER MODAL -->
+  <div id="center-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="center-modal-title">
+    <div class="modal-backdrop" id="center-modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="center-modal-close" aria-label="Close">×</button>
+      <div id="center-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- SCHOLAR MODAL -->
+  <div id="scholar-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="scholar-modal-title">
+    <div class="modal-backdrop" id="scholar-modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="scholar-modal-close" aria-label="Close">×</button>
+      <div id="scholar-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

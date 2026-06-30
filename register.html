@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPE Network — Register</title>
+  <style>
+    /* ── UPDATE THESE TWO LINES when Google Forms are ready ── */
+    /* See js/app.js FORM_URL_CENTER and FORM_URL_INDIVIDUAL    */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0A1628;
+      --white:  #FFFFFF;
+      --amber:  #C49A2E;
+      --text:   #F2F7FD;
+      --muted:  rgba(242,247,253,0.55);
+      --stripe: #9A6D1F;
+      --sans:   system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --serif:  Georgia, 'Times New Roman', serif;
+      --mono:   'Cascadia Code', 'SF Mono', Consolas, 'Courier New', monospace;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--navy);
+      color: var(--text);
+      font-family: var(--sans);
+      overflow: hidden;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      /* top amber stripe matches site header */
+      border-top: 3px solid var(--stripe);
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 28px;
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(242,247,253,0.10);
+    }
+
+    .topbar-brand {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .topbar-brand span {
+      font-size: 10px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--amber);
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-fs {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      color: var(--muted);
+      border: 1px solid rgba(242,247,253,0.20);
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: color 150ms, border-color 150ms;
+    }
+
+    .btn-fs:hover { color: var(--text); border-color: rgba(242,247,253,0.45); }
+
+    .btn-home {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid rgba(242,247,253,0.20);
+      padding: 5px 12px;
+      border-radius: 3px;
+      transition: color 150ms, border-color 150ms;
+    }
+
+    .btn-home:hover { color: var(--text); border-color: rgba(242,247,253,0.45); }
+
+    /* ── PANELS ── */
+    .panels {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      min-height: 0;
+    }
+
+    .divider {
+      background: rgba(242,247,253,0.12);
+      align-self: stretch;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 40px 28px;
+      gap: 20px;
+    }
+
+    /* ── QR CODE ── */
+    .qr-wrap {
+      background: var(--white);
+      padding: 16px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Takes up most of the available height */
+      width:  min(46vh, 42vw);
+      height: min(46vh, 42vw);
+      flex-shrink: 0;
+    }
+
+    .qr-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* ── PANEL TEXT ── */
+    .panel-eyebrow {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--amber);
+      text-align: center;
+    }
+
+    .panel-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.8vw, 36px);
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      line-height: 1.15;
+      text-wrap: balance;
+    }
+
+    .panel-instruction {
+      font-size: clamp(13px, 1.4vw, 17px);
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      max-width: 340px;
+      text-wrap: balance;
+    }
+
+    .panel-url {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: rgba(242,247,253,0.35);
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 8px 24px;
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(242,247,253,0.25);
+      border-top: 1px solid rgba(242,247,253,0.08);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      html, body { overflow: visible; height: auto; }
+      .page { height: 100vh; border-top: 4px solid #9A6D1F; }
+      .topbar-actions { display: none; }
+      .btn-fs, .btn-home { display: none; }
+    }
+
+    /* ── NARROW SCREENS ── */
+    @media (max-width: 640px) {
+      .panels { grid-template-columns: 1fr; grid-template-rows: 1fr 1px 1fr; height: auto; }
+      .divider { height: 1px; width: 100%; }
+      html, body { overflow-y: auto; }
+      .qr-wrap { width: 72vw; height: 72vw; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div class="topbar-brand">
+      EPE Network
+      <span>Emerging Political Economy</span>
+    </div>
+    <div class="topbar-actions">
+      <a class="btn-home" href="index.html">← Directory</a>
+      <button class="btn-fs" id="fsBtn">Full Screen</button>
+    </div>
+  </div>
+
+  <div class="panels">
+
+    <!-- CENTER PANEL -->
+    <div class="panel">
+      <div class="panel-eyebrow">For Center Directors &amp; Administrators</div>
+      <div class="qr-wrap">
+        <img class="qr-img" id="qr-center" alt="QR code — Register your center">
+      </div>
+      <div class="panel-title">Register Your Center</div>
+      <p class="panel-instruction">
+        Add your center's research profile, topics, and contact information to the global directory.
+      </p>
+      <div class="panel-url" id="url-center"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SCHOLAR PANEL -->
+    <div class="panel">
+      <div class="panel-eyebrow">For Scholars &amp; Researchers</div>
+      <div class="qr-wrap">
+        <img class="qr-img" id="qr-scholar" alt="QR code — Register as a scholar">
+      </div>
+      <div class="panel-title">Register as a Scholar</div>
+      <p class="panel-instruction">
+        Add your name, research topics, and affiliation to connect with colleagues across the network.
+      </p>
+      <div class="panel-url" id="url-scholar"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    EPE Network · Emerging Political Economy · epe-network.github.io
+  </div>
+</div>
+
+<script>
+  // ── UPDATE THESE TWO URLS when Google Forms are ready ──────────────────────
+  const CENTER_FORM_URL     = 'https://docs.google.com/forms/d/e/1FAIpQLSci_-chUcEJ8zRdVWyyek97IaOtf4I611DxgbxRu9hbSMZCvQ/viewform';
+  const INDIVIDUAL_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSckdC5YvPYTOyeQ9T4aT-O_3hA1YWgbjM-45rCbX-_HFMH0mQ/viewform';
+  // ──────────────────────────────────────────────────────────────────────────
+
+  function setQR(imgId, urlId, formUrl) {
+    const qrSrc = 'https://api.qrserver.com/v1/create-qr-code/'
+      + '?size=600x600&margin=16&color=0A1628&bgcolor=FFFFFF'
+      + '&data=' + encodeURIComponent(formUrl);
+    document.getElementById(imgId).src = qrSrc;
+    document.getElementById(urlId).textContent = formUrl;
+  }
+
+  setQR('qr-center',  'url-center',  CENTER_FORM_URL);
+  setQR('qr-scholar', 'url-scholar', INDIVIDUAL_FORM_URL);
+
+  // Full-screen toggle
+  document.getElementById('fsBtn').addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+      document.getElementById('fsBtn').textContent = 'Exit Full Screen';
+    } else {
+      document.exitFullscreen();
+      document.getElementById('fsBtn').textContent = 'Full Screen';
+    }
+  });
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement)
+      document.getElementById('fsBtn').textContent = 'Full Screen';
+  });
+</script>
+</body>
+</html>
