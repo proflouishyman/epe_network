@@ -395,6 +395,8 @@ a { color: var(--terracotta); }
   border-radius: 4px;
   object-fit: contain;
   flex-shrink: 0;
+  background: #fff;
+  padding: 3px;
 }
 
 /* === CENTER CARD LAYOUT === */
