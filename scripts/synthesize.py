@@ -252,6 +252,23 @@ def process_individuals(csv_path, centers):
         })
     return individuals
 
+# ── CSV AUTO-DETECTION ─────────────────────────────────────────────────────────
+
+def find_latest_csv(data_dir, keywords):
+    """
+    Return the most recently modified CSV in data_dir whose filename contains
+    any of the given keywords (case-insensitive). Falls back to None if not found.
+    """
+    candidates = [
+        p for p in data_dir.glob('*.csv')
+        if any(k.lower() in p.name.lower() for k in keywords)
+    ]
+    if not candidates:
+        return None
+    latest = max(candidates, key=lambda p: p.stat().st_mtime)
+    return latest
+
+
 # ── MAIN ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -259,8 +276,21 @@ def main():
     print('EPE Network — Data Synthesis')
     print('=' * 40)
 
+    # Auto-detect latest CSVs by keyword match on filename, newest file wins.
+    center_csv = (
+        find_latest_csv(data_dir, ['center', 'centres'])
+        or data_dir / 'centers_responses.csv'
+    )
+    individual_csv = (
+        find_latest_csv(data_dir, ['scholar', 'individual', 'researcher'])
+        or data_dir / 'individuals_responses.csv'
+    )
+
+    print(f'\nCenter CSV:     {center_csv.name}')
+    print(f'Individual CSV: {individual_csv.name}')
+
     print('\nProcessing centers…')
-    centers = process_centers(data_dir / 'centers_responses.csv')
+    centers = process_centers(center_csv)
     if centers is not None:
         out = data_dir / 'centers.json'
         out.write_text(json.dumps(centers, indent=2, ensure_ascii=False), encoding='utf-8')
@@ -270,7 +300,7 @@ def main():
         centers = json.loads(centers_json.read_text()) if centers_json.exists() else []
 
     print('\nProcessing individuals…')
-    individuals = process_individuals(data_dir / 'individuals_responses.csv', centers)
+    individuals = process_individuals(individual_csv, centers)
     if individuals is not None:
         out = data_dir / 'individuals.json'
         out.write_text(json.dumps(individuals, indent=2, ensure_ascii=False), encoding='utf-8')
