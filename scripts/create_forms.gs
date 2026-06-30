@@ -119,6 +119,58 @@ var YEAR_OPTIONS = (function() {
 //  MAIN — creates both forms and logs the URLs
 // ═══════════════════════════════════════════════════════════════════════════
 
+/**
+ * patchScholarForm — removes the Institution and Country fields from the
+ * EXISTING live scholar form so its URL stays the same.
+ *
+ * HOW TO USE:
+ * 1. Paste the scholar form's edit URL into SCHOLAR_FORM_EDIT_URL below.
+ *    (Open the form in editor → copy the address bar URL.)
+ * 2. Click Run → patchScholarForm
+ * 3. Done — no URL changes needed anywhere.
+ */
+function patchScholarForm() {
+  var SCHOLAR_FORM_EDIT_URL = 'PASTE_SCHOLAR_FORM_EDIT_URL_HERE';
+
+  var form = FormApp.openByUrl(SCHOLAR_FORM_EDIT_URL);
+  var removed = [];
+  var REMOVE_TITLES = [
+    'Institution',
+    'Country',
+    'Country (if "Other" above)',
+  ];
+
+  // Iterate in reverse so index shifts don't matter
+  var items = form.getItems();
+  for (var i = items.length - 1; i >= 0; i--) {
+    if (REMOVE_TITLES.indexOf(items[i].getTitle()) !== -1) {
+      removed.push(items[i].getTitle());
+      form.deleteItem(items[i]);
+    }
+  }
+
+  // Update Center Affiliation help text to explain the change
+  items = form.getItems();
+  for (var j = 0; j < items.length; j++) {
+    if (items[j].getTitle() === 'Center Affiliation') {
+      items[j].asListItem().setHelpText(
+        'Select your primary EPE Network center. ' +
+        'Institution and country are taken from your center\'s record. ' +
+        'If your center is not listed, choose "Other / Independent".'
+      );
+      break;
+    }
+  }
+
+  if (removed.length === 0) {
+    Logger.log('No matching fields found — they may already have been removed.');
+  } else {
+    Logger.log('Removed fields: ' + removed.join(', '));
+    Logger.log('Form URL unchanged: ' + form.getPublishedUrl());
+  }
+}
+
+
 function createEPEForms() {
 
   // ─────────────────────────────────────────────────────────────────────────
