@@ -7,16 +7,19 @@ const FORM_URL_INDIVIDUAL = 'https://docs.google.com/forms/d/e/1FAIpQLSckdC5YvPY
 
 let centers = [];
 let individuals = [];
+let topicTaxonomy = [];  // [{id, label, group}]
 let activeRegionFilter = null;
 
 async function loadData() {
   try {
-    const [cRes, iRes] = await Promise.all([
+    const [cRes, iRes, tRes] = await Promise.all([
       fetch('data/centers.json'),
       fetch('data/individuals.json'),
+      fetch('data/topics.json'),
     ]);
-    centers = await cRes.json();
+    centers     = await cRes.json();
     individuals = await iRes.json();
+    topicTaxonomy = await tRes.json();
   } catch (e) {
     console.error('Could not load data:', e);
   }
@@ -288,19 +291,49 @@ function buildScholarFilters() {
     addOption(regionSel, r, r);
   });
 
-  const allTopics = [...new Set(individuals.flatMap(i => [
+  // Build topic dropdown grouped by taxonomy category
+  const usedLabels = new Set(individuals.flatMap(i => [
     ...(i.topics_current || []),
     ...(i.topics_anticipated || []),
     ...(i.topics_would_like || []),
-  ]))].sort();
-  allTopics.forEach(t => addOption(topicSel, t, t));
+  ]));
+
+  // Group taxonomy by group, preserving order
+  const groups = new Map();
+  for (const t of topicTaxonomy) {
+    if (!groups.has(t.group)) groups.set(t.group, []);
+    groups.get(t.group).push(t);
+  }
+
+  for (const [groupName, topics] of groups) {
+    const optgroup = document.createElement('optgroup');
+    optgroup.label = groupName;
+    let anyUsed = false;
+    for (const t of topics) {
+      if (usedLabels.has(t.label)) {
+        addOption(optgroup, t.label, t.label);
+        anyUsed = true;
+      }
+    }
+    if (anyUsed) topicSel.appendChild(optgroup);
+  }
+
+  // Append any free-text topics not in taxonomy (from old form submissions)
+  const taxonomyLabels = new Set(topicTaxonomy.map(t => t.label));
+  const freeText = [...usedLabels].filter(l => !taxonomyLabels.has(l)).sort();
+  if (freeText.length) {
+    const og = document.createElement('optgroup');
+    og.label = 'Other';
+    freeText.forEach(t => addOption(og, t, t));
+    topicSel.appendChild(og);
+  }
 }
 
-function addOption(sel, value, text) {
+function addOption(parent, value, text) {
   const opt = document.createElement('option');
   opt.value = value;
   opt.textContent = text;
-  sel.appendChild(opt);
+  parent.appendChild(opt);
 }
 
 // Returns the last-name token used for alphabetical sorting and indexing.

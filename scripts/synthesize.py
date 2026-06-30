@@ -151,59 +151,127 @@ def parse_list(text):
     items = re.split(r'\s*[;,\n]\s*', text)
     return [i.strip() for i in items if i.strip()]
 
-# Known EPE topic strings (sorted longest-first for greedy matching)
+# Canonical EPE topic labels (sorted longest-first for greedy matching)
 _EPE_TOPICS_SORTED = sorted([
-    'Care economy and social reproduction',
-    'Climate, green transition, and energy policy',
-    'Comparative capitalism and varieties of capitalism',
-    'Corporate governance and ownership',
-    'Development economics and state capacity',
-    'Digital economy and platform labor',
-    'Feminist political economy',
-    'Financialization and financial markets',
-    'Global value chains and trade',
-    'Housing, land, and urban economy',
-    'Industrial policy and structural transformation',
-    'Inequality and redistribution',
-    'Labor markets, unions, and employment',
-    'Migration and labor mobility',
-    'Monetary policy, central banking, and debt',
-    'Post-colonial and decolonial political economy',
-    'Racial capitalism and economic justice',
-    'Social protection and welfare state',
-    'State-market relations and regulation',
-    'Technology, automation, and AI',
-    'Other (please describe below)',
+    # Core Theory
+    'Political Economy',
+    'Institutional Economics',
+    'Comparative Capitalism',
+    'History of Capitalism',
+    'Economic Sociology',
+    # Labor & Work
+    'Labor Markets & Employment',
+    'Labor, Unions & Collective Action',
+    'Future of Work & Automation',
+    'Migration & Labor',
+    # Development & Growth
+    'Economic Development',
+    'Industrial Policy & Structural Transformation',
+    'Global South Political Economy',
+    'State & Markets',
+    'Trade & Globalization',
+    # Technology & Innovation
+    'Innovation Policy',
+    'Digital Economy & Platform Labor',
+    'AI, Automation & Technology',
+    # Finance & Macroeconomics
+    'Macroeconomics & Monetary Policy',
+    'Public Finance & Fiscal Policy',
+    'Finance, Banking & Credit',
+    'Financial Regulation',
+    # Environment & Climate
+    'Climate & Green Transition',
+    'Environmental Economics',
+    'Energy Policy',
+    # Politics & Governance
+    'Democracy & Governance',
+    'Public Policy',
+    'Political Institutions',
+    'Economic History',
+    'Law & Political Economy',
+    # Inequality & Society
+    'Inequality',
+    'Race, Ethnicity & Economic Inequality',
+    'Gender & the Economy',
+    'Health Economics',
+    'Education Economics',
+    # Global & Regional
+    'Latin America',
+    'South Asia',
+    # Catch-all
+    'Other',
 ], key=len, reverse=True)
+
+# Alias map: old form label → canonical label (for backward compat with existing CSV responses)
+_TOPIC_ALIASES = {
+    'Care economy and social reproduction':          'Gender & the Economy',
+    'Climate, green transition, and energy policy':  'Climate & Green Transition',
+    'Comparative capitalism and varieties of capitalism': 'Comparative Capitalism',
+    'Corporate governance and ownership':            'Financial Regulation',
+    'Development economics and state capacity':      'Economic Development',
+    'Digital economy and platform labor':            'Digital Economy & Platform Labor',
+    'Feminist political economy':                    'Gender & the Economy',
+    'Financialization and financial markets':        'Finance, Banking & Credit',
+    'Global value chains and trade':                 'Trade & Globalization',
+    'Housing, land, and urban economy':              'Public Policy',
+    'Industrial policy and structural transformation': 'Industrial Policy & Structural Transformation',
+    'Inequality and redistribution':                 'Inequality',
+    'Labor markets, unions, and employment':         'Labor Markets & Employment',
+    'Migration and labor mobility':                  'Migration & Labor',
+    'Monetary policy, central banking, and debt':    'Macroeconomics & Monetary Policy',
+    'Post-colonial and decolonial political economy':'Global South Political Economy',
+    'Racial capitalism and economic justice':        'Race, Ethnicity & Economic Inequality',
+    'Social protection and welfare state':           'Public Finance & Fiscal Policy',
+    'State-market relations and regulation':         'State & Markets',
+    'Technology, automation, and AI':                'AI, Automation & Technology',
+    'Other (please describe below)':                 None,  # drop
+    # History of Capitalism already canonical
+    'History of Capitalism':                         'History of Capitalism',
+}
+
+def _canonicalize(topic):
+    """Map an old or free-text topic string to the canonical label, or return it as-is."""
+    if topic in _TOPIC_ALIASES:
+        return _TOPIC_ALIASES[topic]  # may be None (drop)
+    return topic
 
 def parse_checkbox_topics(text):
     """
     Parse a Google Forms checkbox export where options are joined by ', '.
-    Uses greedy known-vocabulary matching so multi-comma option names
-    (e.g. 'Labor markets, unions, and employment') are kept intact.
-    Falls back to comma-splitting for unrecognised tokens.
+    Uses greedy known-vocabulary matching so multi-comma option names are kept
+    intact. Old topic labels are mapped to the current canonical vocabulary via
+    _TOPIC_ALIASES. Falls back to comma-splitting for unrecognised tokens.
     """
     if not text or not text.strip():
         return []
+
+    # Build combined vocab: current labels + old aliases (longest-first)
+    all_known = sorted(
+        list(_EPE_TOPICS_SORTED) + list(_TOPIC_ALIASES.keys()),
+        key=len, reverse=True
+    )
+
     results = []
     remaining = text.strip()
     while remaining:
         matched = False
-        for topic in _EPE_TOPICS_SORTED:
+        for topic in all_known:
             if remaining == topic or remaining.startswith(topic + ', '):
-                if topic.lower() != 'other (please describe below)':
-                    results.append(topic)
+                canonical = _canonicalize(topic)
+                if canonical:
+                    results.append(canonical)
                 remaining = remaining[len(topic):].lstrip(', ')
                 matched = True
                 break
         if not matched:
-            # Not a known topic — take up to the next ', ' as a free-text entry
             idx = remaining.find(', ')
             token = remaining[:idx].strip() if idx != -1 else remaining.strip()
             if token:
-                results.append(token)
+                canonical = _canonicalize(token)
+                if canonical:
+                    results.append(canonical)
             remaining = remaining[idx + 2:] if idx != -1 else ''
-    return results
+    return list(dict.fromkeys(results))  # deduplicate preserving order
 
 def parse_timestamp(ts):
     for fmt in ['%m/%d/%Y %H:%M:%S', '%Y-%m-%d %H:%M:%S', '%m/%d/%Y %H:%M', '%Y-%m-%d']:

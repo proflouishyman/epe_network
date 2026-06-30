@@ -1,0 +1,46 @@
+[
+  {"id": "political-economy",            "label": "Political Economy",                        "group": "Core Theory"},
+  {"id": "institutional-economics",      "label": "Institutional Economics",                  "group": "Core Theory"},
+  {"id": "comparative-capitalism",       "label": "Comparative Capitalism",                   "group": "Core Theory"},
+  {"id": "history-of-capitalism",        "label": "History of Capitalism",                    "group": "Core Theory"},
+  {"id": "economic-sociology",           "label": "Economic Sociology",                       "group": "Core Theory"},
+
+  {"id": "labor-markets",                "label": "Labor Markets & Employment",               "group": "Labor & Work"},
+  {"id": "labor-unions-collective-action","label": "Labor, Unions & Collective Action",       "group": "Labor & Work"},
+  {"id": "future-of-work",               "label": "Future of Work & Automation",              "group": "Labor & Work"},
+  {"id": "migration-labor",              "label": "Migration & Labor",                        "group": "Labor & Work"},
+
+  {"id": "economic-development",         "label": "Economic Development",                     "group": "Development & Growth"},
+  {"id": "industrial-policy",            "label": "Industrial Policy & Structural Transformation", "group": "Development & Growth"},
+  {"id": "global-south",                 "label": "Global South Political Economy",           "group": "Development & Growth"},
+  {"id": "state-and-markets",            "label": "State & Markets",                          "group": "Development & Growth"},
+  {"id": "trade-globalization",          "label": "Trade & Globalization",                    "group": "Development & Growth"},
+
+  {"id": "innovation-policy",            "label": "Innovation Policy",                        "group": "Technology & Innovation"},
+  {"id": "digital-economy",              "label": "Digital Economy & Platform Labor",         "group": "Technology & Innovation"},
+  {"id": "ai-automation",                "label": "AI, Automation & Technology",              "group": "Technology & Innovation"},
+
+  {"id": "macroeconomics",               "label": "Macroeconomics & Monetary Policy",         "group": "Finance & Macroeconomics"},
+  {"id": "public-finance",               "label": "Public Finance & Fiscal Policy",           "group": "Finance & Macroeconomics"},
+  {"id": "finance-banking",              "label": "Finance, Banking & Credit",                "group": "Finance & Macroeconomics"},
+  {"id": "financial-regulation",         "label": "Financial Regulation",                     "group": "Finance & Macroeconomics"},
+
+  {"id": "climate-green-transition",     "label": "Climate & Green Transition",               "group": "Environment & Climate"},
+  {"id": "environmental-economics",      "label": "Environmental Economics",                  "group": "Environment & Climate"},
+  {"id": "energy-policy",                "label": "Energy Policy",                            "group": "Environment & Climate"},
+
+  {"id": "democracy-governance",         "label": "Democracy & Governance",                   "group": "Politics & Governance"},
+  {"id": "public-policy",                "label": "Public Policy",                            "group": "Politics & Governance"},
+  {"id": "political-institutions",       "label": "Political Institutions",                   "group": "Politics & Governance"},
+  {"id": "economic-history",             "label": "Economic History",                         "group": "Politics & Governance"},
+  {"id": "law-political-economy",        "label": "Law & Political Economy",                  "group": "Politics & Governance"},
+
+  {"id": "inequality",                   "label": "Inequality",                               "group": "Inequality & Society"},
+  {"id": "race-ethnicity-economy",       "label": "Race, Ethnicity & Economic Inequality",    "group": "Inequality & Society"},
+  {"id": "gender-economy",               "label": "Gender & the Economy",                     "group": "Inequality & Society"},
+  {"id": "health-economics",             "label": "Health Economics",                         "group": "Inequality & Society"},
+  {"id": "education-economics",          "label": "Education Economics",                      "group": "Inequality & Society"},
+
+  {"id": "latin-america",                "label": "Latin America",                            "group": "Global & Regional"},
+  {"id": "south-asia",                   "label": "South Asia",                               "group": "Global & Regional"}
+]

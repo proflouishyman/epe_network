@@ -13,26 +13,52 @@
 // ── Shared option lists ─────────────────────────────────────────────────────
 
 var EPE_TOPIC_OPTIONS = [
-  'Care economy and social reproduction',
-  'Climate, green transition, and energy policy',
-  'Comparative capitalism and varieties of capitalism',
-  'Corporate governance and ownership',
-  'Development economics and state capacity',
-  'Digital economy and platform labor',
-  'Feminist political economy',
-  'Financialization and financial markets',
-  'Global value chains and trade',
-  'Housing, land, and urban economy',
-  'Industrial policy and structural transformation',
-  'Inequality and redistribution',
-  'Labor markets, unions, and employment',
-  'Migration and labor mobility',
-  'Monetary policy, central banking, and debt',
-  'Post-colonial and decolonial political economy',
-  'Racial capitalism and economic justice',
-  'Social protection and welfare state',
-  'State-market relations and regulation',
-  'Technology, automation, and AI',
+  // Core Theory
+  'Political Economy',
+  'Institutional Economics',
+  'Comparative Capitalism',
+  'History of Capitalism',
+  'Economic Sociology',
+  // Labor & Work
+  'Labor Markets & Employment',
+  'Labor, Unions & Collective Action',
+  'Future of Work & Automation',
+  'Migration & Labor',
+  // Development & Growth
+  'Economic Development',
+  'Industrial Policy & Structural Transformation',
+  'Global South Political Economy',
+  'State & Markets',
+  'Trade & Globalization',
+  // Technology & Innovation
+  'Innovation Policy',
+  'Digital Economy & Platform Labor',
+  'AI, Automation & Technology',
+  // Finance & Macroeconomics
+  'Macroeconomics & Monetary Policy',
+  'Public Finance & Fiscal Policy',
+  'Finance, Banking & Credit',
+  'Financial Regulation',
+  // Environment & Climate
+  'Climate & Green Transition',
+  'Environmental Economics',
+  'Energy Policy',
+  // Politics & Governance
+  'Democracy & Governance',
+  'Public Policy',
+  'Political Institutions',
+  'Economic History',
+  'Law & Political Economy',
+  // Inequality & Society
+  'Inequality',
+  'Race, Ethnicity & Economic Inequality',
+  'Gender & the Economy',
+  'Health Economics',
+  'Education Economics',
+  // Global & Regional
+  'Latin America',
+  'South Asia',
+  // Free text
   'Other (please describe below)'
 ];
 
