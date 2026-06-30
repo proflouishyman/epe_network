@@ -2,8 +2,8 @@
 
 // ── FORM URLS ─────────────────────────────────────────────
 // Replace these with real Google Forms URLs after creating the forms.
-const FORM_URL_CENTER     = 'https://docs.google.com/forms/d/e/1FAIpQLSci_-chUcEJ8zRdVWyyek97IaOtf4I611DxgbxRu9hbSMZCvQ/viewform';
-const FORM_URL_INDIVIDUAL = 'https://docs.google.com/forms/d/e/1FAIpQLSckdC5YvPYTOyeQ9T4aT-O_3hA1YWgbjM-45rCbX-_HFMH0mQ/viewform';
+const FORM_URL_CENTER     = 'https://docs.google.com/forms/d/e/1FAIpQLSeNT_HrLro2qSGjbX9tI76kSoSo1FVRUpOG3Wsbedy0dxCQsg/viewform';
+const FORM_URL_INDIVIDUAL = 'https://docs.google.com/forms/d/e/1FAIpQLSe3mmyh_1OqIa6LyXIr-pJyG35tg6_h39fsT8FdC2Lx1r792A/viewform';
 
 let centers = [];
 let individuals = [];
