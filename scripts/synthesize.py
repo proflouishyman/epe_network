@@ -57,6 +57,9 @@ INDIVIDUAL_COLUMNS = {
     'name':                'Full Name',
     'title':               'Title / Position',
     'center_name':         'Center Affiliation',
+    # institution and country are no longer asked on the scholar form —
+    # they are inherited from the center record. These keys remain for
+    # backward compat with older CSV responses that do include them.
     'institution':         'Institution',
     'country':             'Country',
     'email':               'Email',
@@ -354,7 +357,7 @@ def process_individuals(csv_path, centers):
         print(f'  [SKIP] {csv_path} not found — keeping existing individuals.json.')
         return None
 
-    center_lookup = {c['name'].lower(): c['id'] for c in (centers or [])}
+    center_lookup    = {c['name'].lower(): c for c in (centers or [])}
 
     rows = read_csv_dedup(csv_path)
     print(f'  {len(rows)} individual response(s) in CSV.')
@@ -380,14 +383,17 @@ def process_individuals(csv_path, centers):
     for key, (ts, row) in sorted(by_key.items()):
         name        = get(row, INDIVIDUAL_COLUMNS, 'name')
         center_name = get(row, INDIVIDUAL_COLUMNS, 'center_name')
-        country     = get(row, INDIVIDUAL_COLUMNS, 'country')
+        center_rec  = center_lookup.get(center_name.lower(), {})
+        # institution/country: use scholar's own answer if present, else inherit from center
+        institution = get(row, INDIVIDUAL_COLUMNS, 'institution') or center_rec.get('institution', '')
+        country     = get(row, INDIVIDUAL_COLUMNS, 'country')     or center_rec.get('country', '')
         individuals.append({
             'id':                  slugify(name) if name else key,
             'name':                name,
             'title':               get(row, INDIVIDUAL_COLUMNS, 'title'),
-            'center_id':           center_lookup.get(center_name.lower(), ''),
+            'center_id':           center_rec.get('id', ''),
             'center_name':         center_name,
-            'institution':         get(row, INDIVIDUAL_COLUMNS, 'institution'),
+            'institution':         institution,
             'country':             country,
             'region':              COUNTRY_TO_REGION.get(country, 'Other'),
             'email':               get(row, INDIVIDUAL_COLUMNS, 'email'),

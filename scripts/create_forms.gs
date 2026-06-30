@@ -329,24 +329,8 @@ function createEPEForms() {
   sf.addListItem()
     .setTitle('Center Affiliation')
     .setRequired(true)
-    .setHelpText('Select your primary EPE Network center. If your center is not listed, choose "Other / Independent".')
+    .setHelpText('Select your primary EPE Network center. Institution and country are taken from your center\'s record. If your center is not listed, choose "Other / Independent".')
     .setChoiceValues(CENTER_NAMES);
-
-  sf.addTextItem()
-    .setTitle('Institution')
-    .setRequired(true)
-    .setHelpText('Your university or research institution.');
-
-  sf.addListItem()
-    .setTitle('Country')
-    .setRequired(true)
-    .setHelpText('Your current location.')
-    .setChoiceValues(COUNTRY_OPTIONS);
-
-  sf.addTextItem()
-    .setTitle('Country (if "Other" above)')
-    .setRequired(false)
-    .setHelpText('Fill in only if you selected "Other" for Country.');
 
   sf.addTextItem()
     .setTitle('Email')
