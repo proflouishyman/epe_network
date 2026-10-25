@@ -73,7 +73,7 @@ var CENTER_NAMES = [
   'Columbia Center for Political Economy — Columbia University',
   'Reimagining the Economy Initiative — Harvard Kennedy School',
   'Center for Equitable Economy and Sustainable Society — Howard University',
-  'Center on Economy and Society (CES) — Johns Hopkins University',
+  'Center for Economy and Society (CES) — Johns Hopkins University',
   'Work of the Future — MIT',
   'Emergent Political Economies — Santa Fe Institute',
   'Berkeley Economy and Society Initiative (BESI) — UC Berkeley',

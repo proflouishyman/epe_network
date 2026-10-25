@@ -36,7 +36,7 @@ CENTERS = [
      "url": "https://reimaginingtheeconomy.hks.harvard.edu/"},
     {"id": "howard-cees",     "name": "Center for Equitable Economy and Sustainable Society",
      "url": "https://howard.edu/"},
-    {"id": "ces-jhu",         "name": "Center on Economy and Society",
+    {"id": "ces-jhu",         "name": "Center for Economy and Society",
      "url": "https://snfagora.jhu.edu/our-work/labs/center-for-economy-society/"},
     {"id": "mit-sfw",         "name": "Shaping the Future of Work",
      "url": "https://workofthefuture.mit.edu/"},

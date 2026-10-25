@@ -50,7 +50,7 @@ CENTERS = {
     'howard-cees':    dict(name='Center for Equitable Economy and Sustainable Society',
                            institution='Howard University',
                            country='United States', region='North America'),
-    'ces-jhu':        dict(name='Center on Economy and Society',
+    'ces-jhu':        dict(name='Center for Economy and Society',
                            institution='Johns Hopkins University',
                            country='United States', region='North America'),
     'mit-sfw':        dict(name='Work of the Future',
